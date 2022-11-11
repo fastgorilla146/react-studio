@@ -47,22 +47,31 @@ function App() {
     return count;
   }
 
+  function ItemData() {
+    return (
+      <div>
+      {bakeryData.map((item, index) => ( // TODO: map bakeryData to BakeryItem components  
+      <p className="menuItem">
+      <div> <img src={item.image} alt={item.name} class="image"/> </div>
+      <div>{item.name} ${item.price} <button onClick={() => handleClick({item})}> Add to Cart </button> 
+      <div className="description">{item.description}</div>
+      </div>
+      
+      </p> 
+      
+  ))}
+  </div>
+    );
+  }
+
 
 
   return (
     <div className="App">
       <div className="menu">
       <h1>My Bakery</h1> {/* TODO: personalize your bakery (if you want) */}
-
-      {bakeryData.map((item, index) => ( // TODO: map bakeryData to BakeryItem components  
-          <p className="menuItem">
-          <div> <img src={item.image} alt={item.name} class="image"/> </div>
-          <div>{item.name} ${item.price} <button onClick={() => handleClick({item})}> Add to Cart </button> 
-          <div className="description">{item.description}</div>
-          </div>
-          
-          </p> 
-      ))}
+      <ItemData />
+  
       </div>
       <div className="cart">
         <h2>Cart </h2>
