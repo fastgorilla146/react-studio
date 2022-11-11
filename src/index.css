@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+div{
+  padding: 8px; 
+}
+
+.App{
+  display: flex;
+  justify-content: space-around;
+}
+.menu{
+  text-align: left;
+}
+.cart{
+  display: inline-block;
+  vertical-align: right;
+}
+
+.menuItem {
+  font-size: 24px;
+}
+
+.description{
+  font-size: 14px;
+}
