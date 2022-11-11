@@ -51,26 +51,30 @@ function App() {
 
   return (
     <div className="App">
-      <div class="menu">
+      <div className="menu">
       <h1>My Bakery</h1> {/* TODO: personalize your bakery (if you want) */}
 
       {bakeryData.map((item, index) => ( // TODO: map bakeryData to BakeryItem components  
-          <p class="menuItem"> 
-          <div>{item.name} ${item.price} <button onClick={() => handleClick({item})}> Add to Cart </button> </div>
-          <div class="description">{item.description}</div>
+          <p className="menuItem">
+          <div> <img src={item.image} alt={item.name} class="image"/> </div>
+          <div>{item.name} ${item.price} <button onClick={() => handleClick({item})}> Add to Cart </button> 
+          <div className="description">{item.description}</div>
+          </div>
+          
           </p> 
       ))}
       </div>
-      <div class="cart">
+      <div className="cart">
         <h2>Cart </h2>
         <h3>Total = ${(Math.round(price * 100) / 100).toFixed(2)} </h3>
 
         <h4>{items.map((bakedGood) => 
-        <p>{NumberOf(bakedGood)}x {bakedGood} </p>
+        <p>{NumberOf(bakedGood)} {bakedGood} </p>
         )}</h4>
       </div>
     </div>
   );
 }
+
 
 export default App;
